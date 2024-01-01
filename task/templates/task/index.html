@@ -1,0 +1,7 @@
+<h1>Welcome</h1>
+<p><a href="{% url 'new' %}"> Add New Task </a></p>
+<hr />
+
+{% for task in tasks %}
+<p>{{task.title}} : {{task.description}}</p>
+{% endfor %}

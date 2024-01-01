@@ -1,0 +1,15 @@
+{# tutorial/templates/tutorial/people.html #}
+<!DOCTYPE html>
+{% load render_table from django_tables2 %}
+<html>
+  <head>
+    <title>List of persons</title>
+  </head>
+  <body>
+    <h1>List of Tasks</h1>
+    <p><a href="{% url 'new' %}"> Add New Task </a></p>
+    <hr />
+
+    {% render_table object_list %}
+  </body>
+</html>
