@@ -21,7 +21,7 @@ class TestIndexPage(TestCase):
         url = "/"
         response = self.client.get(url)
 
-        self.assertTemplateUsed(response, 'task/index.html')
+        self.assertTemplateUsed(response, 'task/listtask.html')
         self.assertEqual(200, response.status_code)
     
     def test_should_display_tasks_on_index_page(self):
@@ -76,8 +76,8 @@ class TestNewPage(TestCase):
     def test_should_have_valid_form_in_new_page(self):
         self.assertTrue(issubclass(self.form, NewTaskForm))
         #check fields are in the meta
-        self.assertTrue('title' in self.form.Meta.fields)
         self.assertTrue('description' in self.form.Meta.fields)
+        self.assertTrue('title' in self.form.Meta.fields)
         
         #test valid form
 
